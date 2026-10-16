@@ -1,0 +1,47 @@
+name: Update market prices
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 minutes (GitHub sometimes runs these a few minutes late)
+  push:
+    branches: [main]         # republish when you edit the page
+  workflow_dispatch:         # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write            # save prices.json and history back to the repo
+  pages: write               # publish the site
+  id-token: write
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pull prices
+        run: python fetch_prices.py
+      - name: Save prices and history
+        run: |
+          git config user.name "price-bot"
+          git config user.email "price-bot@users.noreply.github.com"
+          git add prices.json history.jsonl history.json
+          git diff --cached --quiet || (git commit -m "Update prices" && git push)
+      - name: Prepare site
+        run: |
+          mkdir -p _site
+          cp index.html prices.json history.json _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
