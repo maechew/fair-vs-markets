@@ -9,26 +9,26 @@
 <title>Fair Model vs. Markets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
 <style>
 /* Layout: one narrow column read like a short paper. Numbers live in tables; charts sit under the table they explain; footnotes carry the method. */
 :root{
-  --bg:#ffffff; --ink:#16181d; --ink-2:#50545e; --muted:#8b8f99; --rule:#e3e5ea; --row:#f4f5f7;
-  --fair:#16181d; --kal:#2f6db5; --poly:#c26a1b; --pi:#1a9a6c; --live:#2f8a52; --flag:#a3561a;
-  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
-  --sans:"Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --bg:#ffffff; --ink:#1b2330; --ink-2:#4a5566; --muted:#7f8a9a; --rule:#d8dee6; --row:#e6ebf1; --head:#0f3b66;
+  --fair:#1b2330; --kal:#2f6db5; --poly:#c26a1b; --pi:#1a9a6c; --live:#2f8a52; --flag:#a3561a;
+  --serif:"Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --sans:"Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#111215; --ink:#ececef; --ink-2:#b4b7bf; --muted:#80848e; --rule:#2a2c32; --row:#1b1c21;
-  --fair:#ececef; --kal:#5b97e0; --poly:#d27a2c; --pi:#279e72; --live:#4fb878; --flag:#e0a06a; color-scheme:dark } }
+  --bg:#10151c; --ink:#e8ecf1; --ink-2:#b3bcc8; --muted:#7f8a9a; --rule:#27303b; --row:#1a222c; --head:#9cc3ea;
+  --fair:#e8ecf1; --kal:#5b97e0; --poly:#d27a2c; --pi:#279e72; --live:#4fb878; --flag:#e0a06a; color-scheme:dark } }
 :root[data-theme="dark"]{
-  --bg:#111215; --ink:#ececef; --ink-2:#b4b7bf; --muted:#80848e; --rule:#2a2c32; --row:#1b1c21;
-  --fair:#ececef; --kal:#5b97e0; --poly:#d27a2c; --pi:#279e72; --live:#4fb878; --flag:#e0a06a; color-scheme:dark }
+  --bg:#10151c; --ink:#e8ecf1; --ink-2:#b3bcc8; --muted:#7f8a9a; --rule:#27303b; --row:#1a222c; --head:#9cc3ea;
+  --fair:#e8ecf1; --kal:#5b97e0; --poly:#d27a2c; --pi:#279e72; --live:#4fb878; --flag:#e0a06a; color-scheme:dark }
 
-body{ background:var(--bg); color:var(--ink); font:17px/1.55 var(--serif); margin:0; -webkit-font-smoothing:antialiased; }
+body{ background:var(--bg); color:var(--ink); font:16px/1.6 var(--sans); margin:0; -webkit-font-smoothing:antialiased; }
 main{ max-width:680px; margin:0 auto; padding-inline:20px; padding-block:56px 72px; }
-h1{ font:600 2rem/1.15 var(--serif); margin:0 0 10px; letter-spacing:-0.01em; text-wrap:balance; }
-h2{ font:600 1.3rem/1.25 var(--serif); margin:56px 0 4px; text-wrap:balance; }
+h1{ font:700 1.9rem/1.2 var(--sans); color:var(--head); margin:0 0 10px; letter-spacing:-0.01em; text-wrap:balance; }
+h2{ font:700 1.2rem/1.3 var(--sans); color:var(--head); margin:52px 0 6px; padding-bottom:6px; border-bottom:2px solid var(--head); text-wrap:balance; }
 p{ margin:0; }
 a{ color:inherit; text-decoration-color:var(--muted); text-underline-offset:2px; }
 a:hover{ text-decoration-color:var(--ink); }
@@ -83,6 +83,21 @@ figcaption{ font:600 .9rem var(--sans); margin-bottom:6px; }
 .empty{ font:400 .85rem var(--sans); color:var(--muted); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:22px 0; text-align:center; }
 .tip{ position:fixed; pointer-events:none; background:var(--ink); color:var(--bg); font:400 .78rem/1.4 var(--sans); padding:5px 8px; white-space:nowrap; z-index:5; }
 
+/* calculator */
+.calc-h{ font:600 1rem var(--serif); margin:30px 0 10px; }
+.calc{ display:grid; gap:14px; border-top:1px solid var(--ink); padding-top:14px; font-family:var(--sans); }
+.calc-in{ display:grid; gap:6px; }
+.calc-in label{ display:flex; justify-content:space-between; gap:12px; font-size:.9rem; color:var(--ink-2); margin-top:6px; }
+.calc-in output{ font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600; }
+.calc-in input[type=range]{ width:100%; accent-color:var(--fair); }
+.calc-out{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.calc-out div{ display:grid; gap:2px; border-bottom:1px solid var(--rule); padding-bottom:8px; }
+.calc-out span{ font-size:.82rem; color:var(--muted); }
+.calc-out b{ font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.calc button{ justify-self:start; font:400 .85rem var(--sans); color:var(--ink); background:none; border:1px solid var(--rule); padding:6px 12px; cursor:pointer; }
+.calc button:hover{ border-color:var(--ink-2); }
+@media (max-width:480px){ .calc-out{ grid-template-columns:1fr; } }
+
 /* equation */
 .eq td:first-child{ color:var(--ink); }
 .eq tr.total td{ border-top:1px solid var(--ink); border-bottom:0; font-weight:600; }
@@ -120,6 +135,11 @@ footer .credit{ font:400 .82rem/1.6 var(--sans); color:var(--muted); margin-top:
       <div class="chart" id="chart"></div>
     </figure>
 
+    <figure>
+      <figcaption>Chance Democrats win the popular vote, since December</figcaption>
+      <p class="legend"><span><i style="background:var(--fair)"></i>Fair (at each update)</span><span><i style="background:var(--kal)"></i>Kalshi</span><span><i style="background:var(--poly)"></i>Polymarket</span></p>
+      <div class="chart" id="hist-house"></div>
+    </figure>
   </section>
 
   <section aria-labelledby="h-sen">
@@ -146,37 +166,51 @@ footer .credit{ font:400 .82rem/1.6 var(--sans); color:var(--muted); margin-top:
     <h2 id="h-eq">The House equation</h2>
     <p class="q">Fair's prediction of the Democratic two-party vote share, <span class="f-date"></span>.</p>
     <div class="tw"><table class="eq"><tbody id="parts"></tbody></table></div>
-    <p class="note">The equation uses economic conditions and a few structural political facts. It is not adjusted for current events.</p>
+    <p class="note"><span id="eq-inputs"></span> The equation uses economic conditions and a few structural political facts. It is not adjusted for current events.</p>
+
+    <h3 class="calc-h">Try your own numbers</h3>
+    <div class="calc">
+      <div class="calc-in">
+        <label for="c-infl"><span>Inflation over the term (Pcc)</span><output id="c-infl-v"></output></label>
+        <input type="range" id="c-infl" min="0" max="10" step="0.01">
+        <label for="c-q"><span>Quarters of strong growth</span><output id="c-q-v"></output></label>
+        <input type="range" id="c-q" min="0" max="7" step="1">
+      </div>
+      <div class="calc-out">
+        <div><span>Predicted Democratic share</span><b id="c-share">–</b></div>
+        <div><span>Chance Democrats win the vote</span><b id="c-chance">–</b></div>
+      </div>
+      <p class="note" id="c-match"></p>
+      <button type="button" id="c-reset">Reset to Fair's numbers</button>
+    </div>
   </section>
 
   <footer>
-    <p class="about">I put this page together so Professor Fair's 2026 predictions can be read next to live betting odds. It replaces the market tables he collects by hand. Prices update every few minutes. Questions or corrections: mae.chew@yale.edu</p>
+    <p class="about">Questions or corrections: mae.chew@yale.edu</p>
     <h3>Notes</h3>
     <ul>
-      <li><b>Fair.</b> Predicted Democratic share of the two-party House vote, 50.89% (<span class="f-date"></span>), standard error 2.39 points, treated as normal. <a href="https://fairmodel.econ.yale.edu/vote2020/indeane1.htm" target="_blank" rel="noopener">House page</a>. Vote data from the Clerk of the House (<a href="https://fairmodel.econ.yale.edu/RAYFAIR/PDF/2022d.PDF" target="_blank" rel="noopener">p. 15</a>).</li>
+      <li><b>Fair.</b> Predicted Democratic share of the two-party House vote, <span class="f-mean"></span>% (<span class="f-date"></span>), standard error <span class="f-se"></span> points, treated as normal. <a href="https://fairmodel.econ.yale.edu/vote2020/indeane1.htm" target="_blank" rel="noopener">House page</a>. Vote data from the Clerk of the House (<a href="https://fairmodel.econ.yale.edu/RAYFAIR/PDF/2022d.PDF" target="_blank" rel="noopener">p. 15</a>).</li>
       <li><b>House markets.</b> <a href="https://kalshi.com/markets/kxhousepopvotemargin" target="_blank" rel="noopener">Kalshi</a> and <a href="https://polymarket.com/event/2026-midterms-house-popular-vote-margin-of-victory-224" target="_blank" rel="noopener">Polymarket</a> popular vote margin contracts. Democrats win the vote when the margin is above zero; a margin of <i>m</i> points is about 50 + <i>m</i>/2 percent of the two-party vote. Control of the House depends on seats, not votes.</li>
       <li><b>Senate.</b> Under Fair's ranking assumption, the chance of control is the chance in the pivot, the race that gives Democrats their 51st seat. Independents count as Democrats. <a href="https://fairmodel.econ.yale.edu/vote2020/inrank26.htm" target="_blank" rel="noopener">Senate page</a>.</li>
+      <li><b>Calculator.</b> Changes only inflation and the count of strong-growth quarters (each counts 15/7 toward Zcc); everything else stays at Fair's values. Uses the equation's coefficients rounded to three decimals, so results can differ from Fair's by a few hundredths.</li>
       <li><b>Prices.</b> Midpoint of bid and ask, scaled to 100% per race. Chart shading is the bid–ask range. "24h" is the change in Kalshi's price. PredictIt's fees push long-shot prices up.</li>
     </ul>
-    <p class="credit">Model: Ray C. Fair. Market data: Kalshi, PredictIt, Polymarket. Page: Mae Chew.<br>Changes: Oct 16, added PredictIt. Oct 14, first version.</p>
+    <p class="credit">Model: Ray C. Fair. Market data: Kalshi, PredictIt, Polymarket. Page: Mae Chew.<br>Changes: Oct 27, added the calculator and prediction history. Oct 16, added PredictIt. Oct 14, first version.</p>
   </footer>
 </main>
 <div class="tip" id="tip" hidden></div>
 
-<script id="fallback" type="application/json">{"updated": "2026-10-14T18:55:00+00:00", "senate": {"now": {"dem": 47, "rep": 53, "control": 51}, "states": [{"name": "Georgia", "held": "D", "kalshi": 0.9624, "predictit": 0.9356, "polymarket": 0.9629}, {"name": "North Carolina", "held": "R", "kalshi": 0.967, "predictit": 0.95, "polymarket": 0.9566}, {"name": "New Hampshire", "held": "D", "kalshi": 0.8762, "predictit": 0.8492, "polymarket": 0.8762}, {"name": "Minnesota", "held": "D", "kalshi": 0.8593, "predictit": 0.84, "polymarket": 0.875}, {"name": "Alaska", "held": "R", "kalshi": 0.735, "predictit": null, "polymarket": 0.7335}, {"name": "Michigan", "held": "D", "kalshi": 0.6717, "predictit": 0.6667, "polymarket": 0.698}, {"name": "Texas", "held": "R", "kalshi": 0.655, "predictit": 0.5842, "polymarket": 0.625}, {"name": "Ohio", "held": "R", "kalshi": 0.595, "predictit": 0.6089, "polymarket": 0.615}, {"name": "Maine", "held": "R", "kalshi": 0.575, "predictit": 0.5495, "polymarket": 0.5891}, {"name": "Iowa", "held": "R", "kalshi": 0.415, "predictit": null, "polymarket": 0.425}, {"name": "Kansas", "held": "R", "kalshi": 0.3812, "predictit": null, "polymarket": 0.375}, {"name": "Nebraska", "held": "R", "kalshi": 0.2479, "predictit": 0.2759, "polymarket": 0.2757}, {"name": "South Carolina", "held": "R", "kalshi": 0.135, "predictit": null, "polymarket": 0.155}, {"name": "Florida", "held": "R", "kalshi": 0.0965, "predictit": null, "polymarket": 0.0995}], "control": {"kalshi": 0.615, "predictit": 0.6165, "polymarket": 0.635}}, "house": {"popvote": {"kalshi": [{"lo": -100, "hi": 0, "p": 0.04998, "bid": 0.04764, "ask": 0.05231}, {"lo": 0, "hi": 2, "p": 0.01962, "bid": 0.01214, "ask": 0.02709}, {"lo": 2, "hi": 4, "p": 0.03036, "bid": 0.02989, "ask": 0.03083}, {"lo": 4, "hi": 6, "p": 0.0752, "bid": 0.07473, "ask": 0.07567}, {"lo": 6, "hi": 8, "p": 0.15413, "bid": 0.14946, "ask": 0.1588}, {"lo": 8, "hi": 10, "p": 0.26623, "bid": 0.26156, "ask": 0.2709}, {"lo": 10, "hi": 12, "p": 0.21018, "bid": 0.20551, "ask": 0.21485}, {"lo": 12, "hi": 14, "p": 0.12611, "bid": 0.12144, "ask": 0.13078}, {"lo": 14, "hi": 16, "p": 0.04998, "bid": 0.04484, "ask": 0.05511}, {"lo": 16, "hi": 100, "p": 0.01822, "bid": 0.01775, "ask": 0.01868}], "polymarket": [{"lo": -100.0, "hi": -6.0, "p": 0.00672, "bid": 0.00448, "ask": 0.00896}, {"lo": -6.0, "hi": -4.0, "p": 0.01255, "bid": 0.00359, "ask": 0.02152}, {"lo": -4.0, "hi": -2.0, "p": 0.02331, "bid": 0.01793, "ask": 0.02869}, {"lo": -2.0, "hi": 0.0, "p": 0.02062, "bid": 0.00986, "ask": 0.03138}, {"lo": 0.0, "hi": 2.0, "p": 0.02913, "bid": 0.02152, "ask": 0.03675}, {"lo": 2.0, "hi": 4.0, "p": 0.05424, "bid": 0.03944, "ask": 0.06903}, {"lo": 4.0, "hi": 6.0, "p": 0.09413, "bid": 0.08068, "ask": 0.10758}, {"lo": 6.0, "hi": 8.0, "p": 0.18826, "bid": 0.17929, "ask": 0.19722}, {"lo": 8.0, "hi": 10.0, "p": 0.25549, "bid": 0.25101, "ask": 0.25997}, {"lo": 10.0, "hi": 12.0, "p": 0.19274, "bid": 0.18826, "ask": 0.19722}, {"lo": 12.0, "hi": 14.0, "p": 0.09234, "bid": 0.08875, "ask": 0.09592}, {"lo": 14.0, "hi": 16.0, "p": 0.01748, "bid": 0.00896, "ask": 0.026}, {"lo": 16.0, "hi": 100.0, "p": 0.013, "bid": 0.00448, "ask": 0.02152}]}, "control": {"kalshi": 0.9005, "predictit": 0.8719, "polymarket": 0.905}}, "errors": ["predictit Alaska: no market found for Alaska", "predictit Iowa: no market found for Iowa", "predictit Kansas: no market found for Kansas", "predictit South Carolina: no market found for South Carolina", "predictit Florida: no market found for Florida"]}</script>
+<script id="fallback" type="application/json">{"updated":"2026-10-14T18:55:00+00:00","senate":{"now":{"dem":47,"rep":53,"control":51},"states":[{"name":"Georgia","held":"D","kalshi":0.9624,"predictit":0.9356,"polymarket":0.9629},{"name":"North Carolina","held":"R","kalshi":0.967,"predictit":0.95,"polymarket":0.9566},{"name":"New Hampshire","held":"D","kalshi":0.8762,"predictit":0.8492,"polymarket":0.8762},{"name":"Minnesota","held":"D","kalshi":0.8593,"predictit":0.84,"polymarket":0.875},{"name":"Alaska","held":"R","kalshi":0.735,"predictit":null,"polymarket":0.7335},{"name":"Michigan","held":"D","kalshi":0.6717,"predictit":0.6667,"polymarket":0.698},{"name":"Texas","held":"R","kalshi":0.655,"predictit":0.5842,"polymarket":0.625},{"name":"Ohio","held":"R","kalshi":0.595,"predictit":0.6089,"polymarket":0.615},{"name":"Maine","held":"R","kalshi":0.575,"predictit":0.5495,"polymarket":0.5891},{"name":"Iowa","held":"R","kalshi":0.415,"predictit":null,"polymarket":0.425},{"name":"Kansas","held":"R","kalshi":0.3812,"predictit":null,"polymarket":0.375},{"name":"Nebraska","held":"R","kalshi":0.2479,"predictit":0.2759,"polymarket":0.2757},{"name":"South Carolina","held":"R","kalshi":0.135,"predictit":null,"polymarket":0.155},{"name":"Florida","held":"R","kalshi":0.0965,"predictit":null,"polymarket":0.0995}],"control":{"kalshi":0.615,"predictit":0.6165,"polymarket":0.635}},"house":{"popvote":{"kalshi":[{"lo":-100,"hi":0,"p":0.04998,"bid":0.04764,"ask":0.05231},{"lo":0,"hi":2,"p":0.01962,"bid":0.01214,"ask":0.02709},{"lo":2,"hi":4,"p":0.03036,"bid":0.02989,"ask":0.03083},{"lo":4,"hi":6,"p":0.0752,"bid":0.07473,"ask":0.07567},{"lo":6,"hi":8,"p":0.15413,"bid":0.14946,"ask":0.1588},{"lo":8,"hi":10,"p":0.26623,"bid":0.26156,"ask":0.2709},{"lo":10,"hi":12,"p":0.21018,"bid":0.20551,"ask":0.21485},{"lo":12,"hi":14,"p":0.12611,"bid":0.12144,"ask":0.13078},{"lo":14,"hi":16,"p":0.04998,"bid":0.04484,"ask":0.05511},{"lo":16,"hi":100,"p":0.01822,"bid":0.01775,"ask":0.01868}],"polymarket":[{"lo":-100.0,"hi":-6.0,"p":0.00672,"bid":0.00448,"ask":0.00896},{"lo":-6.0,"hi":-4.0,"p":0.01255,"bid":0.00359,"ask":0.02152},{"lo":-4.0,"hi":-2.0,"p":0.02331,"bid":0.01793,"ask":0.02869},{"lo":-2.0,"hi":0.0,"p":0.02062,"bid":0.00986,"ask":0.03138},{"lo":0.0,"hi":2.0,"p":0.02913,"bid":0.02152,"ask":0.03675},{"lo":2.0,"hi":4.0,"p":0.05424,"bid":0.03944,"ask":0.06903},{"lo":4.0,"hi":6.0,"p":0.09413,"bid":0.08068,"ask":0.10758},{"lo":6.0,"hi":8.0,"p":0.18826,"bid":0.17929,"ask":0.19722},{"lo":8.0,"hi":10.0,"p":0.25549,"bid":0.25101,"ask":0.25997},{"lo":10.0,"hi":12.0,"p":0.19274,"bid":0.18826,"ask":0.19722},{"lo":12.0,"hi":14.0,"p":0.09234,"bid":0.08875,"ask":0.09592},{"lo":14.0,"hi":16.0,"p":0.01748,"bid":0.00896,"ask":0.026},{"lo":16.0,"hi":100.0,"p":0.013,"bid":0.00448,"ask":0.02152}]},"control":{"kalshi":0.9005,"predictit":0.8719,"polymarket":0.905}},"errors":["predictit Alaska: no market found for Alaska","predictit Iowa: no market found for Iowa","predictit Kansas: no market found for Kansas","predictit South Carolina: no market found for South Carolina","predictit Florida: no market found for Florida"]}</script>
 <script>
 (function(){
-/* Fair's numbers: update when he posts a new prediction */
-const FAIR = {
-  mean: 50.89, se: 2.39, date: "July 31, 2026",
-  parts: [
-    ["Constant", 49.04],
-    ["Republican president", 3.36],
-    ["Previous House vote", -0.92],
-    ["Previous presidential vote", 0.17],
-    ["Inflation", 1.50],
-    ["Strong-growth quarters", -2.26]
-  ]
+/* Fair's numbers. The live values come from fair.json (edit that file when he posts an update);
+   these are only a fallback if it can't be read. */
+let FAIR = {
+  date: "July 31, 2026", date_iso: "2026-07-31", mean: 50.89, se: 2.39,
+  inputs: { Pcc: 4.05, Zcc: 4.286 },
+  parts: [["Constant",49.04],["Republican president",3.36],["Previous House vote",-0.92],["Previous presidential vote",0.17],["Inflation",1.50],["Strong-growth quarters",-2.26]],
+  coef: { inflation: 0.370, growth: 0.528 },
+  history: [["2025-12-15",49.16],["2026-04-30",50.66],["2026-07-31",50.89]]
 };
 const SENATE = { dem:47, control:51 };
 const REFRESH_MS = 60000, STALE_MIN = 30, SPLIT_PTS = 5, TIE_PTS = 2;
@@ -189,6 +223,17 @@ function erf(x){ const s=x<0?-1:1; x=Math.abs(x); const t=1/(1+0.3275911*x);
   return s*(1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x)); }
 const Phi = x => 0.5*(1+erf(x/Math.SQRT2));
 const fairAbove = share => 1-Phi((share-FAIR.mean)/FAIR.se);
+function PhiInv(p){ // Acklam's approximation
+  if (p<=0) return -8; if (p>=1) return 8;
+  const a=[-39.69683028665376,220.9460984245205,-275.9285104469687,138.3577518672690,-30.66479806614716,2.506628277459239],
+        b=[-54.47609879822406,161.5858368580409,-155.6989798598866,66.80131188771972,-13.28068155288572],
+        c=[-0.007784894002430293,-0.3223964580411365,-2.400758277161838,-2.549732539343734,4.374664141464968,2.938163982698783],
+        d=[0.007784695709041462,0.3224671290700398,2.445134137142996,3.754408661907416];
+  const pl=0.02425; let q,r;
+  if (p<pl){ q=Math.sqrt(-2*Math.log(p)); return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
+  if (p>1-pl){ q=Math.sqrt(-2*Math.log(1-p)); return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
+  q=p-0.5; r=q*q; return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q/(((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
+}
 const above = (bs, m, k='p') => bs ? bs.filter(b=>b.lo>=m-1e-9).reduce((a,b)=>a+(b[k]??b.p),0) : null;
 function median(bs){ if(!bs) return null; let c=0; const s=[...bs].sort((a,b)=>a.lo-b.lo);
   for (const b of s){ if (c+b.p>=0.5){ const lo=Math.max(b.lo,-20), hi=Math.min(b.hi,30); return lo+(0.5-c)/b.p*(hi-lo); } c+=b.p; } return null; }
@@ -196,7 +241,7 @@ const share1 = m => m==null ? '–' : (50+m/2).toFixed(1)+'%';
 function showTip(ev, text){ tip.textContent=text; tip.hidden=false; tip.style.left=Math.max(8,Math.min(ev.clientX+12, innerWidth-tip.offsetWidth-8))+'px'; tip.style.top=(ev.clientY-32)+'px'; }
 function hideTip(){ tip.hidden=true; }
 
-let current=null, history=[];
+let current=null, history=[], popHist=[];
 
 function render(D){
   const H=D.house||{}, PV=H.popvote||{}, HC=H.control||{}, S=D.senate||{}, SC=S.control||{};
@@ -209,6 +254,8 @@ function render(D){
   $('s-f').textContent=FAIR.mean.toFixed(1)+'%'; $('s-k').textContent=share1(median(PV.kalshi)); $('s-p').textContent=share1(median(PV.polymarket));
   $('c-k').textContent=pct(HC.kalshi); $('c-p').textContent=pct(HC.polymarket);
   document.querySelectorAll('.f-date').forEach(e=>e.textContent=FAIR.date);
+  document.querySelectorAll('.f-mean').forEach(e=>e.textContent=FAIR.mean.toFixed(2));
+  document.querySelectorAll('.f-se').forEach(e=>e.textContent=FAIR.se);
   drawExceed(PV.kalshi, PV.polymarket);
 
   // Senate, laid out like Fair's table: ranked by Kalshi, three markets side by side
@@ -244,8 +291,89 @@ function render(D){
     $('sen-note').textContent = note;
   }
   const parts=FAIR.parts; let tot=0;
-  $('parts').innerHTML=parts.map(([l,v],i)=>{ tot+=v; return `<tr><td>${l}</td><td>${i===0?v.toFixed(2):(v>=0?'+':'−')+Math.abs(v).toFixed(2)}</td></tr>`; }).join('')+`<tr class="total"><td>Predicted Democratic share</td><td>${tot.toFixed(2)}</td></tr>`;
-  drawHistory();
+  $('parts').innerHTML=parts.map(([l,v],i)=>{ tot+=v; return `<tr><td>${l}</td><td>${i===0?v.toFixed(2):(v>=0?'+':'−')+Math.abs(v).toFixed(2)}</td></tr>`; }).join('')+`<tr class="total"><td>Predicted Democratic share</td><td>${(FAIR.mean??tot).toFixed(2)}</td></tr>`;
+  $('eq-inputs').textContent = FAIR.inputs ? `Inputs: inflation over the term (Pcc) ${FAIR.inputs.Pcc.toFixed(2)}%, strong-growth term (Zcc) ${FAIR.inputs.Zcc.toFixed(3)}.` : '';
+  marketWin = above(PV.kalshi,0);
+  calcInit(); calcUpdate();
+  drawHistory(); drawHouseHist();
+}
+
+/* ---------- calculator: change inflation and strong-growth quarters, keep everything else at Fair's values */
+let marketWin=null, calcReady=false, calcDirty=false;
+const ZPERQ = 15/7;
+function calcBase(){ const c=FAIR.coef, x=FAIR.inputs; return FAIR.mean - c.inflation*x.Pcc + c.growth*x.Zcc; }
+function calcInit(){
+  if (calcReady && calcDirty) return;          // don't move the sliders while someone is using them
+  $('c-infl').value = FAIR.inputs.Pcc;
+  $('c-q').value = Math.round(FAIR.inputs.Zcc/ZPERQ);
+  calcReady = true;
+}
+function calcUpdate(){
+  const c=FAIR.coef, p=+$('c-infl').value, q=+$('c-q').value;
+  const zcc = (q===Math.round(FAIR.inputs.Zcc/ZPERQ)) ? FAIR.inputs.Zcc : q*ZPERQ;   // keep Fair's exact Zcc at his setting
+  const share = calcBase() + c.inflation*p - c.growth*zcc;
+  const chance = Phi((share-50)/FAIR.se);
+  $('c-infl-v').textContent = p.toFixed(2)+'%';
+  $('c-q-v').textContent = q + (q===1?' quarter':' quarters');
+  $('c-share').textContent = share.toFixed(2)+'%';
+  $('c-chance').textContent = pct(chance);
+  if (marketWin!=null && marketWin>0.5 && marketWin<0.999){
+    const need = 50 + FAIR.se*PhiInv(marketWin);                 // share that would give the market's chance
+    const pNeed = (need - calcBase() + c.growth*zcc)/c.inflation;
+    $('c-match').textContent = pNeed>0 && pNeed<=20
+      ? `To match Kalshi's ${pct(marketWin)} with ${q} strong-growth ${q===1?'quarter':'quarters'}, inflation over the term would need to be about ${pNeed.toFixed(1)}%.`
+      : `With ${q} strong-growth ${q===1?'quarter':'quarters'}, no inflation rate up to 20% matches Kalshi's ${pct(marketWin)}.`;
+  } else $('c-match').textContent='';
+}
+['c-infl','c-q'].forEach(id=>$(id).addEventListener('input',()=>{ calcDirty=true; calcUpdate(); }));
+$('c-reset').addEventListener('click',()=>{ calcDirty=false; calcReady=false; calcInit(); calcUpdate(); });
+
+/* ---------- House history: Fair's chance at each update vs the markets' chance */
+function fairPoints(){
+  const h=(FAIR.history||[]).map(([d,m])=>[new Date(d+'T12:00:00Z').getTime(), m]);
+  if (FAIR.date_iso && !h.some(([t])=>Math.abs(t-new Date(FAIR.date_iso+'T12:00:00Z').getTime())<86400e3)) h.push([new Date(FAIR.date_iso+'T12:00:00Z').getTime(), FAIR.mean]);
+  return h.sort((a,b)=>a[0]-b[0]).map(([t,m])=>[t, 100*Phi((m-50)/FAIR.se), m]);
+}
+function marketSeries(){
+  // daily backfill (popvote_history.json) plus the saved 15-minute points (history.json), in percent
+  const k=[], p=[];
+  popHist.forEach(r=>{ const t=new Date(r.d+'T21:00:00Z').getTime(); if (r.kalshi!=null) k.push([t,r.kalshi]); if (r.poly!=null) p.push([t,r.poly]); });
+  const first = k.length||p.length ? Math.max(...[...k,...p].map(x=>x[0])) : 0;
+  history.forEach(h=>{ const t=new Date(h.t).getTime(); if (t<=first || !h.hv) return; if (h.hv[0]!=null) k.push([t,h.hv[0]]); if (h.hv[1]!=null) p.push([t,h.hv[1]]); });
+  return { k:k.sort((a,b)=>a[0]-b[0]), p:p.sort((a,b)=>a[0]-b[0]) };
+}
+function drawHouseHist(){
+  const box=$('hist-house'); const F=fairPoints(), M=marketSeries();
+  if (!F.length){ box.innerHTML=''; return; }
+  const W=Math.max(300,box.clientWidth||640), H=Math.round(Math.min(260,W*0.42)), P={l:34,r:12,t:12,b:26};
+  const now=Date.now(), t0=F[0][0]-7*86400e3, t1=Math.max(now, ...M.k.map(x=>x[0]), ...M.p.map(x=>x[0]));
+  const sx=t=>P.l+(t-t0)/(t1-t0)*(W-P.l-P.r), sy=v=>P.t+(1-v/100)*(H-P.t-P.b);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Chance Democrats win the House popular vote over time: Fair's equation at each update and the markets">`;
+  [0,25,50,75,100].forEach(v=>{ s+=`<line x1="${P.l}" x2="${W-P.r}" y1="${sy(v)}" y2="${sy(v)}" stroke="var(--rule)"/><text x="${P.l-6}" y="${sy(v)+4}" text-anchor="end">${v}%</text>`; });
+  // month ticks
+  const d=new Date(t0); d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth()+1);
+  const months=[]; while (d.getTime()<=t1){ months.push(d.getTime()); d.setUTCMonth(d.getUTCMonth()+1); }
+  const every = months.length>8 ? 2 : 1;
+  months.forEach((t,i)=>{ if (i%every) return; s+=`<text x="${sx(t)}" y="${H-8}" text-anchor="middle">${new Date(t).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'})}</text>`; });
+  // markets
+  [['kal',M.k],['poly',M.p]].forEach(([key,ser])=>{ if (ser.length<2) return;
+    s+=`<path d="${ser.map((x,i)=>(i?'L':'M')+sx(x[0]).toFixed(1)+','+sy(x[1]).toFixed(1)).join('')}" fill="none" stroke="var(--${key})" stroke-width="1.75"/>`; });
+  // Fair: a step line that holds each prediction until the next update
+  let path=''; F.forEach((f,i)=>{ const x=sx(f[0]), y=sy(f[1]); path += (i? `H${x.toFixed(1)}V${y.toFixed(1)}` : `M${x.toFixed(1)},${y.toFixed(1)}`); });
+  path += `H${sx(t1).toFixed(1)}`;
+  s+=`<path d="${path}" fill="none" stroke="var(--fair)" stroke-width="2"/>`;
+  F.forEach((f,i)=>{ const x=sx(f[0]), y=sy(f[1]); const last=i===F.length-1;
+    s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${last?4.5:3.5}" fill="var(--fair)" stroke="var(--bg)" stroke-width="1.5"/>`;
+    s+=`<text x="${(x+5).toFixed(1)}" y="${(y-7).toFixed(1)}" style="fill:var(--fair);font-weight:600">${Math.round(f[1])}%</text>`; });
+  s+=`<rect class="hit" x="${P.l}" y="${P.t}" width="${W-P.l-P.r}" height="${H-P.t-P.b}" fill="transparent"/></svg>`;
+  box.innerHTML=s;
+  const nearest=(ser,t)=>{ let b=null; ser.forEach(x=>{ if (x[0]<=t && (!b||x[0]>b[0])) b=x; }); return b; };
+  const hit=box.querySelector('.hit');
+  const show=ev=>{ const r=box.querySelector('svg').getBoundingClientRect(); const t=t0+((ev.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(t1-t0);
+    const f=nearest(F,t), k=nearest(M.k,t), p=nearest(M.p,t);
+    const when=new Date(t).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});
+    showTip(ev, `${when} · Fair ${f?Math.round(f[1])+'% ('+f[2].toFixed(2)+')':'–'}, Kalshi ${k?Math.round(k[1])+'%':'–'}, Polymarket ${p?Math.round(p[1])+'%':'–'}`); };
+  hit.addEventListener('pointermove',show); hit.addEventListener('pointerdown',show); hit.addEventListener('pointerleave',hideTip);
 }
 
 /* the history point closest to 24 hours before the latest one */
@@ -338,15 +466,18 @@ function drawHistory(){
 
 try { current=JSON.parse($('fallback').textContent); } catch(e) {}
 async function load(){
+  try{ const r=await fetch('fair.json?t='+Date.now(),{cache:'no-store'}); if(r.ok){ const f=await r.json(); if (typeof f.mean==='number' && Array.isArray(f.parts)) FAIR=Object.assign({}, FAIR, f); } }catch(e){}
+  try{ const r=await fetch('popvote_history.json?t='+Date.now(),{cache:'no-store'}); if(r.ok) popHist=await r.json(); }catch(e){}
   try{ const r=await fetch('history.json?t='+Date.now(),{cache:'no-store'}); if(r.ok) history=await r.json(); }catch(e){}
   try{ const r=await fetch('prices.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; current=await r.json(); }catch(e){}
   if (current) render(current);
 }
 if (current) render(current);
 load(); setInterval(load, REFRESH_MS);
-let rz=0; addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(lastExceed) drawExceed(...lastExceed); drawHistory(); },150); });
+let rz=0; addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ if(lastExceed) drawExceed(...lastExceed); drawHistory(); drawHouseHist(); },150); });
 })();
 </script>
+
 
 </body>
 </html>
