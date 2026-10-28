@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T19:42:45+00:00",
+ "updated": "2026-10-28T23:34:48+00:00",
  "senate": {
   "now": {
    "dem": 47,
@@ -10,105 +10,105 @@
    {
     "name": "Georgia",
     "held": "D",
-    "kalshi": 0.9531,
+    "kalshi": 0.9532,
     "predictit": 0.945,
-    "polymarket": 0.9624
+    "polymarket": 0.9645
    },
    {
     "name": "North Carolina",
     "held": "R",
-    "kalshi": 0.9645,
-    "predictit": 0.965,
-    "polymarket": 0.972
+    "kalshi": 0.964,
+    "predictit": 0.9698,
+    "polymarket": 0.9735
    },
    {
     "name": "New Hampshire",
     "held": "D",
-    "kalshi": 0.885,
-    "predictit": 0.905,
+    "kalshi": 0.895,
+    "predictit": 0.895,
     "polymarket": 0.905
    },
    {
     "name": "Minnesota",
     "held": "D",
     "kalshi": 0.8956,
-    "predictit": 0.8856,
-    "polymarket": 0.91
+    "predictit": 0.8905,
+    "polymarket": 0.9055
    },
    {
     "name": "Alaska",
     "held": "R",
-    "kalshi": 0.7236,
-    "predictit": 0.7094,
-    "polymarket": 0.7268
+    "kalshi": 0.685,
+    "predictit": 0.66,
+    "polymarket": 0.6933
    },
    {
     "name": "Michigan",
     "held": "D",
-    "kalshi": 0.685,
-    "predictit": 0.6915,
-    "polymarket": 0.695
+    "kalshi": 0.695,
+    "predictit": 0.698,
+    "polymarket": 0.6965
    },
    {
     "name": "Texas",
     "held": "R",
-    "kalshi": 0.665,
-    "predictit": 0.6269,
+    "kalshi": 0.6717,
+    "predictit": 0.6368,
     "polymarket": 0.685
    },
    {
     "name": "Ohio",
     "held": "R",
     "kalshi": 0.6683,
-    "predictit": 0.6834,
+    "predictit": 0.6919,
     "polymarket": 0.675
    },
    {
     "name": "Maine",
     "held": "R",
     "kalshi": 0.605,
-    "predictit": 0.5784,
-    "polymarket": 0.625
+    "predictit": 0.5777,
+    "polymarket": 0.6313
    },
    {
     "name": "Iowa",
     "held": "R",
-    "kalshi": 0.455,
-    "predictit": 0.4293,
+    "kalshi": 0.4604,
+    "predictit": 0.4428,
     "polymarket": 0.445
    },
    {
     "name": "Kansas",
     "held": "R",
     "kalshi": 0.395,
-    "predictit": 0.398,
-    "polymarket": 0.4221
+    "predictit": 0.4138,
+    "polymarket": 0.425
    },
    {
     "name": "Nebraska",
     "held": "R",
-    "kalshi": 0.2964,
-    "predictit": 0.297,
-    "polymarket": 0.2854
+    "kalshi": 0.2968,
+    "predictit": 0.2995,
+    "polymarket": 0.2918
    },
    {
     "name": "South Carolina",
     "held": "R",
-    "kalshi": 0.2723,
-    "predictit": 0.2745,
-    "polymarket": 0.2786
+    "kalshi": 0.2822,
+    "predictit": 0.278,
+    "polymarket": 0.269
    },
    {
     "name": "Florida",
     "held": "R",
-    "kalshi": 0.1044,
-    "predictit": 0.1393,
+    "kalshi": 0.105,
+    "predictit": 0.1343,
     "polymarket": 0.0896
    }
   ],
   "control": {
-   "kalshi": 0.635,
-   "predictit": 0.6143,
+   "kalshi": 0.655,
+   "predictit": 0.6202,
    "polymarket": 0.665
   }
  },
@@ -118,171 +118,171 @@
     {
      "lo": -100,
      "hi": 0,
-     "p": 0.05553,
-     "bid": 0.05504,
-     "ask": 0.05602
+     "p": 0.05528,
+     "bid": 0.05479,
+     "ask": 0.05577
     },
     {
      "lo": 0,
      "hi": 2,
-     "p": 0.0226,
-     "bid": 0.01966,
-     "ask": 0.02555
+     "p": 0.02104,
+     "bid": 0.02055,
+     "ask": 0.02153
     },
     {
      "lo": 2,
      "hi": 4,
-     "p": 0.02899,
-     "bid": 0.02752,
-     "ask": 0.03047
+     "p": 0.02886,
+     "bid": 0.02838,
+     "ask": 0.02935
     },
     {
      "lo": 4,
      "hi": 6,
-     "p": 0.06585,
-     "bid": 0.06486,
-     "ask": 0.06683
+     "p": 0.06507,
+     "bid": 0.06458,
+     "ask": 0.06556
     },
     {
      "lo": 6,
      "hi": 8,
-     "p": 0.14251,
-     "bid": 0.13759,
-     "ask": 0.14742
+     "p": 0.14188,
+     "bid": 0.13699,
+     "ask": 0.14677
     },
     {
      "lo": 8,
      "hi": 10,
-     "p": 0.26044,
-     "bid": 0.25553,
-     "ask": 0.26536
+     "p": 0.2593,
+     "bid": 0.2544,
+     "ask": 0.26419
     },
     {
      "lo": 10,
      "hi": 12,
-     "p": 0.22113,
-     "bid": 0.21622,
-     "ask": 0.22604
+     "p": 0.22016,
+     "bid": 0.21526,
+     "ask": 0.22505
     },
     {
      "lo": 12,
      "hi": 14,
-     "p": 0.12285,
-     "bid": 0.11794,
-     "ask": 0.12776
+     "p": 0.13209,
+     "bid": 0.1272,
+     "ask": 0.13699
     },
     {
      "lo": 14,
      "hi": 16,
-     "p": 0.04373,
-     "bid": 0.04324,
-     "ask": 0.04423
+     "p": 0.04354,
+     "bid": 0.04305,
+     "ask": 0.04403
     },
     {
      "lo": 16,
      "hi": 100,
-     "p": 0.03636,
-     "bid": 0.0344,
-     "ask": 0.03833
+     "p": 0.03278,
+     "bid": 0.03229,
+     "ask": 0.03327
     }
    ],
    "polymarket": [
     {
      "lo": -100.0,
      "hi": -6.0,
-     "p": 0.0057,
-     "bid": 0.00475,
-     "ask": 0.00664
+     "p": 0.0052,
+     "bid": 0.00473,
+     "ask": 0.00568
     },
     {
      "lo": -6.0,
      "hi": -4.0,
-     "p": 0.01139,
-     "bid": 0.00759,
-     "ask": 0.01519
+     "p": 0.01135,
+     "bid": 0.00757,
+     "ask": 0.01514
     },
     {
      "lo": -4.0,
      "hi": -2.0,
-     "p": 0.02041,
-     "bid": 0.01614,
-     "ask": 0.02468
+     "p": 0.02034,
+     "bid": 0.01608,
+     "ask": 0.0246
     },
     {
      "lo": -2.0,
      "hi": 0.0,
-     "p": 0.02041,
-     "bid": 0.01044,
-     "ask": 0.03037
+     "p": 0.02034,
+     "bid": 0.01041,
+     "ask": 0.03027
     },
     {
      "lo": 0.0,
      "hi": 2.0,
-     "p": 0.03132,
-     "bid": 0.02183,
-     "ask": 0.04082
+     "p": 0.0298,
+     "bid": 0.02271,
+     "ask": 0.0369
     },
     {
      "lo": 2.0,
      "hi": 4.0,
-     "p": 0.03085,
-     "bid": 0.01804,
-     "ask": 0.04366
+     "p": 0.035,
+     "bid": 0.02271,
+     "ask": 0.0473
     },
     {
      "lo": 4.0,
      "hi": 6.0,
-     "p": 0.08543,
-     "bid": 0.07594,
-     "ask": 0.09492
+     "p": 0.08515,
+     "bid": 0.07569,
+     "ask": 0.09461
     },
     {
      "lo": 6.0,
      "hi": 8.0,
-     "p": 0.14238,
-     "bid": 0.13289,
-     "ask": 0.15187
+     "p": 0.14664,
+     "bid": 0.14191,
+     "ask": 0.15137
     },
     {
      "lo": 8.0,
      "hi": 10.0,
-     "p": 0.2468,
-     "bid": 0.2373,
-     "ask": 0.25629
+     "p": 0.24598,
+     "bid": 0.23652,
+     "ask": 0.25544
     },
     {
      "lo": 10.0,
      "hi": 12.0,
-     "p": 0.21832,
-     "bid": 0.20883,
-     "ask": 0.22781
+     "p": 0.21287,
+     "bid": 0.20814,
+     "ask": 0.2176
     },
     {
      "lo": 12.0,
      "hi": 14.0,
-     "p": 0.1158,
-     "bid": 0.10726,
-     "ask": 0.12435
+     "p": 0.114,
+     "bid": 0.10596,
+     "ask": 0.12204
     },
     {
      "lo": 14.0,
      "hi": 16.0,
-     "p": 0.03702,
-     "bid": 0.02943,
-     "ask": 0.04461
+     "p": 0.0369,
+     "bid": 0.02933,
+     "ask": 0.04447
     },
     {
      "lo": 16.0,
      "hi": 100.0,
-     "p": 0.03417,
-     "bid": 0.02943,
-     "ask": 0.03892
+     "p": 0.03642,
+     "bid": 0.035,
+     "ask": 0.03784
     }
    ]
   },
   "control": {
-   "kalshi": 0.9085,
-   "predictit": 0.8663,
+   "kalshi": 0.9087,
+   "predictit": 0.8578,
    "polymarket": 0.925
   }
  },
