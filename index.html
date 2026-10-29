@@ -66,6 +66,7 @@ th .sw{ display:inline-block; width:14px; height:2px; vertical-align:middle; mar
 .sen tbody tr.cut td{ border-bottom:1px solid var(--ink); }
 .sen .flag{ font-weight:400; font-size:.75rem; color:var(--flag); margin-left:8px; white-space:nowrap; }
 .sen .tag{ font-weight:400; font-size:.75rem; color:var(--muted); margin-left:8px; }
+.sen tfoot .tag{ display:block; margin:0; line-height:1.2; }
 .sen tfoot td{ border-bottom:0; padding-top:10px; padding-bottom:4px; color:var(--ink); }
 .sen tfoot tr.first td{ padding-top:14px; }
 .sen tfoot td:nth-child(2){ color:var(--ink-2); }
@@ -136,9 +137,10 @@ footer .credit{ font:400 .82rem/1.6 var(--sans); color:var(--muted); margin-top:
     </figure>
 
     <figure>
-      <figcaption>Chance Democrats win the popular vote, since December</figcaption>
-      <p class="legend"><span><i style="background:var(--fair)"></i>Fair (at each update)</span><span><i style="background:var(--kal)"></i>Kalshi</span><span><i style="background:var(--poly)"></i>Polymarket</span></p>
+      <figcaption>Chance Democrats win the popular vote over time</figcaption>
+      <p class="legend"><span><i style="background:var(--fair)"></i>Fair (each update since Dec 2025)</span><span><i style="background:var(--kal)"></i>Kalshi</span><span><i style="background:var(--poly)"></i>Polymarket</span></p>
       <div class="chart" id="hist-house"></div>
+      <p class="note">Market prices start Oct 16, when this page began saving them.</p>
     </figure>
   </section>
 
@@ -195,7 +197,7 @@ footer .credit{ font:400 .82rem/1.6 var(--sans); color:var(--muted); margin-top:
       <li><b>Calculator.</b> Changes only inflation and the count of strong-growth quarters (each counts 15/7 toward Zcc); everything else stays at Fair's values. Uses the equation's coefficients rounded to three decimals, so results can differ from Fair's by a few hundredths.</li>
       <li><b>Prices.</b> Midpoint of bid and ask, scaled to 100% per race. Chart shading is the bid–ask range. "24h" is the change in Kalshi's price. PredictIt's fees push long-shot prices up.</li>
     </ul>
-    <p class="credit">Model: Ray C. Fair. Market data: Kalshi, PredictIt, Polymarket. Page: Mae Chew.<br>Changes: Oct 27, added the calculator and prediction history. Oct 16, added PredictIt. Oct 14, first version.</p>
+    <p class="credit">Model: Ray C. Fair. Market data: Kalshi, PredictIt, Polymarket. Page: Mae Chew.<br>Changes: Oct 29, Fair's new prediction. Oct 27, added the calculator and prediction history. Oct 16, added PredictIt. Oct 14, first version.</p>
   </footer>
 </main>
 <div class="tip" id="tip" hidden></div>
