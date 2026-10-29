@@ -1,0 +1,23 @@
+{
+  "date": "October 29, 2026",
+  "date_iso": "2026-10-29",
+  "mean": 50.63,
+  "se": 2.39,
+  "inputs": { "Pcc": 3.36, "Zcc": 4.286 },
+  "parts": [
+    ["Constant", 49.04],
+    ["Republican president", 3.36],
+    ["Previous House vote", -0.92],
+    ["Previous presidential vote", 0.17],
+    ["Inflation", 1.24],
+    ["Strong-growth quarters", -2.26]
+  ],
+  "coef": { "inflation": 0.370, "growth": 0.528 },
+  "history": [
+    ["2025-12-23", 49.16],
+    ["2026-02-20", 50.68],
+    ["2026-04-30", 50.66],
+    ["2026-07-31", 50.89],
+    ["2026-10-29", 50.63]
+  ]
+}
